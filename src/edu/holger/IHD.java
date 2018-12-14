@@ -22,14 +22,13 @@ public class IHD {
 
   //Execute IHD
   public void execute(){
-    this.listenToSensor();
-    this.readFromSensor();
+    listenToSensor();
+    readFromSensor();
   }
 
   //Calculate mean
-  private int mean(int i1, int i2){
+  private void mean(int i1, int i2){
     mean = (i1+i2)/2;
-    return mean;
   }
 
   //Put 3V on "start/restart"-pin of sensor
