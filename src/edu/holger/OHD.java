@@ -1,5 +1,4 @@
 //OHD
-package edu.holger;
 
 public class OHD{
   private boolean rear;                      //rear sensor > 5cm from object
@@ -14,7 +13,7 @@ public class OHD{
   private IAD iad4;                          //fourth connected IAD, right
   private IAD iad5;                          //fifth connected IAD, forwardR
 
-  //Initialize OHD, connect with 3 IAD
+  //Initialize OHD, connect with 5 IAD
   public void initialize(IAD iad_1, IAD iad_2, IAD iad_3, IAD iad_4, IAD iad_5){
     rear     = false;
     left     = false;
