@@ -5,8 +5,8 @@ public class IHD {
   private int read1;                //input from sensor, "original output"
   private int read2;                //input from sensor, "safety output"
   private int mean;                 //mean of read1 and read2
-  public static int outputToSensor; //output to sensor
-  private static Sensor sensor;     //the connected sensor
+  public int outputToSensor; //output to sensor
+  private Sensor sensor;     //the connected sensor
 
   final private int TO_SENSOR_3V = 3; //3V = "reset sensor"
   final private int TO_SENSOR_0V = 0; //0V = "listen to sensor-values"
@@ -24,6 +24,7 @@ public class IHD {
   public void execute(){
     listenToSensor();
     readFromSensor();
+    mean(read1, read2);
   }
 
   //Calculate mean
@@ -31,8 +32,13 @@ public class IHD {
     mean = (i1+i2)/2;
   }
 
+  //Obtain mean of read1 and read2
+  public int getMean(){
+    return mean;
+  }
+
   //Put 3V on "start/restart"-pin of sensor
-  private void startSensor(){
+  public void startSensor(){
     outputToSensor = TO_SENSOR_3V;
   }
 
@@ -53,8 +59,5 @@ public class IHD {
   }
   public int getRead2(){
     return read2;
-  }
-  public int getMean(){
-    return mean;
   }
 }
