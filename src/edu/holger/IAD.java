@@ -1,4 +1,5 @@
 //IAD
+package edu.holger;
 
 public class IAD {
   private int input1;      //input from first IHD
