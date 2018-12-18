@@ -51,6 +51,18 @@ public class IHD {
   private void readFromSensor(){
     read1 = sensor.originalOutput;
     read2 = sensor.safetyOutput;
+    if (read1 < 0){
+        read1 = 0;
+    }
+    if (read1 > 200){
+      read1 = 200;
+    }
+    if (read2 < 0){
+      read2 = 0;
+    }
+    if (read2 > 200){
+      read2 = 200;
+    }
   }
 
   //Get-methods for testers
